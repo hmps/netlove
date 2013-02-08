@@ -1,0 +1,224 @@
+/*-----------------------
+CSS FOR RESPONSIVE LAYOUT
+-----------------------*/
+
+* {
+  box-sizing: border-box;
+}
+
+html { height: auto; }
+
+body {
+  height: auto;
+  padding: 5% 0;
+}
+
+.form {
+  background: #ddffdb;
+  background: -moz-radial-gradient(center, ellipse cover, #ffffff 0%, #fce1dd 100%);
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#ffffff), color-stop(100%,#fce1dd));
+  background: -webkit-radial-gradient(center, ellipse cover, #ffffff 0%,#fce1dd 100%);
+  background: -o-radial-gradient(center, ellipse cover, #ffffff 0%,#fce1dd 100%);
+  background: -ms-radial-gradient(center, ellipse cover, #ffffff 0%,#fce1dd 100%);
+  background: radial-gradient(ellipse at center, #ffffff 0%,#fce1dd 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#fce1dd',GradientType=1 );
+  color: #f05541;
+}
+
+.thank-you {
+  background: #ddffdb;
+  background: -moz-radial-gradient(center, ellipse cover, #ef4b3c 0%, #dc2726 100%);
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#ef4b3c), color-stop(100%,#dc2726));
+  background: -webkit-radial-gradient(center, ellipse cover, #ef4b3c 0%,#dc2726 100%);
+  background: -o-radial-gradient(center, ellipse cover, #ef4b3c 0%,#dc2726 100%);
+  background: -ms-radial-gradient(center, ellipse cover, #ef4b3c 0%,#dc2726 100%);
+  background: radial-gradient(ellipse at center, #ef4b3c 0%,#dc2726 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ef4b3c', endColorstr='#dc2726',GradientType=1 );
+  color: #ffffff;
+}
+
+/* Enable responsive images */
+img { max-width: 100%; }
+
+/* Set everything for mobile first, progress up from there */
+p {
+  font-size: 17px;
+  text-align: justify;
+}
+
+a {
+  color: white;
+}
+
+@media screen and (min-width: 640px) {
+  p { font-size: 22px; }
+}
+
+/*-------------------------
+  GENERIC CLASSES
+-------------------------*/
+.shadow {
+  text-shadow: 1px 1px #810707;
+}
+
+.small {
+  font-size: .6em;
+}
+
+.aligncenter {
+  text-align: center;
+}
+
+.margin-top {
+  margin-top: 5%;
+}
+
+input[type=text] {
+  height: 64px;
+  max-width: 584px;
+  width: 95%;
+  margin: auto;
+  padding: .2em .7em;
+  font-size: 16px;
+  border: 0;
+  background: transparent url('http://www.anonymnatkarlek.se/img/form-input-background.png') no-repeat center center;;
+  outline: none;
+}
+
+button[type=submit] {
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+@media screen and (min-width:640px) {
+  input[type=text] {
+    font-size: 22px;
+  }
+}
+
+/*------------------------
+  Set up grid
+------------------------*/
+
+.grid-wrapper {
+  max-width: 640px;
+  margin: 0 auto;
+  zoom: 1;
+  list-style: none;
+}
+
+/* Force non-floated elements to adapt their height to floated children */
+.grid-wrapper:before, .grid-wrapper:after, .slider-view:before, .slider-view:after {
+  content: " ";
+  display: table;
+}
+
+.one-column {
+  float:left;
+  padding: 0 15px;
+  width: 100%;
+}
+
+@media screen and (min-width: 640px) {
+  .one-column {
+    padding: 0;
+  }
+}
+
+/* Content slider on form page */
+
+.love-letter {
+  width: 25%;
+}
+
+.slider {
+  position: relative;
+}
+
+.slider-view {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  pointer-events:none;
+}
+
+/* Add margin above .slider-view to accomodate next/prev buttons */
+.slider-view:before {
+  content: '';
+  height: 40px;
+}
+
+.slider-item {
+  float: left;
+  position:absolute;
+  left: 110%;
+  width:100%;
+  color: #f05541;
+  font-size: 22px;
+  text-shadow: 0;
+}
+
+.slider-item:first-child {
+  position: relative;
+  left: 0;
+  color: #f5948a;
+}
+
+.arrow-prev, .arrow-next {
+  position:absolute;
+  top: 0;
+}
+
+.arrow-prev img, .arrow-next img {
+  height: 40px;
+  cursor: pointer;
+}
+
+.arrow-prev {
+  float:left;
+  left: 0px;
+  display: none;
+}
+.arrow-prev:after {
+  content: 'Föregående';
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.arrow-next {
+  right: 0px;
+  float: right;
+}
+
+.arrow-next:before {
+  content: 'Nästa';
+  font-size: 16px;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 760px) {
+  .arrow-prev {
+    top: 70px;
+    left: -50px;
+  }
+
+  .arrow-next {
+    top: 70px;
+    right: -50px;
+  }
+
+  .arrow-prev img, .arrow-next img {
+    height: auto;
+  }
+
+  .arrow-prev:after, .arrow-next:before {
+    content: '';
+  }
+
+  .slider-view:before {
+    content: '';
+    height: 0;
+  }
+
+}
